@@ -15,7 +15,7 @@
   --mid:#555;--dim:#2a2a2a;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--w);font-family:'Share Tech Mono',monospace;overflow-x:hidden;}
+body{background:var(--bg);color:var(--w);font-family:'Share Tech Mono',monospace;cursor:none;overflow-x:hidden;}
 body::after{content:'';position:fixed;inset:0;z-index:9000;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   opacity:0.3;mix-blend-mode:overlay;}
@@ -34,30 +34,30 @@ display:flex;flex-direction:column;justify-content:center;align-items:flex-start
 padding:10%;font-size:.88rem;line-height:2.1;transition:opacity .8s;}
 #boot.hide{opacity:0;pointer-events:none;}
 .bl{color:#444;opacity:0;animation:bshow .05s forwards;}
-.bl .ok{color:var(--g);} .bl .fail{color:var(--r);} .bl .info{color:var(--y);}
+.bl .ok{color:var(–g);} .bl .fail{color:var(–r);} .bl .info{color:var(–y);}
 @keyframes bshow{to{opacity:1;}}
 
 /* NAV */
 nav{position:fixed;top:0;width:100%;z-index:600;height:52px;
 display:flex;align-items:center;justify-content:space-between;
-padding:0 5%;background:rgba(6,6,8,.93);border-bottom:1px solid rgba(0,255,136,0.25);
-backdrop-filter:blur(12px);box-shadow:0 1px 24px rgba(0,255,136,0.08);}
-.n-logo{font-family:‘Bebas Neue’;font-size:1.35rem;letter-spacing:6px;color:var(--w);text-decoration:none;}
-.n-logo span{color:var(--g);text-shadow:0 0 16px var(--g);}
+padding:0 5%;background:rgba(6,6,8,.93);border-bottom:1px solid var(–border);
+backdrop-filter:blur(12px);}
+.n-logo{font-family:‘Bebas Neue’;font-size:1.35rem;letter-spacing:6px;color:var(–w);text-decoration:none;}
+.n-logo span{color:var(–g);text-shadow:0 0 16px var(–g);}
 .n-links{display:flex;gap:28px;list-style:none;}
-.n-links a{color:var(--mid);text-decoration:none;font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;transition:color .2s;}
-.n-links a:hover{color:var(--g);}
-.n-live{display:flex;align-items:center;gap:8px;font-size:.6rem;letter-spacing:2px;color:var(--g);text-transform:uppercase;}
-.n-dot{width:6px;height:6px;background:var(--g);border-radius:50%;box-shadow:0 0 7px var(--g);animation:ndot 1.5s ease infinite;}
+.n-links a{color:var(–mid);text-decoration:none;font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;transition:color .2s;}
+.n-links a:hover{color:var(–g);}
+.n-live{display:flex;align-items:center;gap:8px;font-size:.6rem;letter-spacing:2px;color:var(–g);text-transform:uppercase;}
+.n-dot{width:6px;height:6px;background:var(–g);border-radius:50%;box-shadow:0 0 7px var(–g);animation:ndot 1.5s ease infinite;}
 @keyframes ndot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.2;transform:scale(.7);}}
 
 /* SECTION BASE */
 section{padding:96px 5%;}
 .sh{margin-bottom:52px;}
-.sh-pre{font-size:.62rem;letter-spacing:4px;color:var(--g);text-transform:uppercase;margin-bottom:8px;}
-.sh-title{font-family:‘Bebas Neue’;font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:2px;color:var(--w);line-height:1;}
-.sh-title em{color:var(--g);font-style:normal;}
-.sh-line{margin-top:10px;height:1px;width:60px;background:var(--g);box-shadow:0 0 8px var(--g);}
+.sh-pre{font-size:.62rem;letter-spacing:4px;color:var(–g);text-transform:uppercase;margin-bottom:8px;}
+.sh-title{font-family:‘Bebas Neue’;font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:2px;color:var(–w);line-height:1;}
+.sh-title em{color:var(–g);font-style:normal;}
+.sh-line{margin-top:10px;height:1px;width:60px;background:var(–g);box-shadow:0 0 8px var(–g);}
 
 /* HERO */
 #hero{min-height:100vh;display:grid;grid-template-rows:1fr auto;padding:52px 5% 0;position:relative;overflow:hidden;}
@@ -65,129 +65,129 @@ section{padding:96px 5%;}
 font-family:‘Bebas Neue’;font-size:clamp(8rem,18vw,22rem);
 color:rgba(255,255,255,.016);letter-spacing:-4px;pointer-events:none;line-height:1;user-select:none;}
 .hero-main{display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px;position:relative;z-index:2;}
-.hero-eye{font-size:.62rem;letter-spacing:5px;color:var(--g);text-transform:uppercase;margin-bottom:16px;
+.hero-eye{font-size:.62rem;letter-spacing:5px;color:var(–g);text-transform:uppercase;margin-bottom:16px;
 display:flex;align-items:center;gap:12px;}
-.hero-eye::before{content:’’;width:36px;height:1px;background:var(--g);box-shadow:0 0 5px var(--g);}
-.hero-name{font-family:‘Bebas Neue’;font-size:clamp(4.5rem,12vw,13rem);line-height:.9;letter-spacing:-2px;color:var(--w);
+.hero-eye::before{content:’’;width:36px;height:1px;background:var(–g);box-shadow:0 0 5px var(–g);}
+.hero-name{font-family:‘Bebas Neue’;font-size:clamp(4.5rem,12vw,13rem);line-height:.9;letter-spacing:-2px;color:var(–w);
 animation:hni 1s 2.6s ease both;}
 .hero-name .accent{color:transparent;-webkit-text-stroke:1px rgba(0,255,136,.35);}
 @keyframes hni{from{opacity:0;transform:translateY(36px);}to{opacity:1;transform:none;}}
-.hero-sub{margin-top:18px;font-size:clamp(.72rem,1.4vw,.95rem);letter-spacing:4px;color:var(--mid);text-transform:uppercase;animation:hni 1s 2.9s ease both;}
-.hero-sub span{color:var(--g);}
+.hero-sub{margin-top:18px;font-size:clamp(.72rem,1.4vw,.95rem);letter-spacing:4px;color:var(–mid);text-transform:uppercase;animation:hni 1s 2.9s ease both;}
+.hero-sub span{color:var(–g);}
 .hero-desc{margin-top:28px;max-width:500px;font-family:‘Inconsolata’;font-size:.9rem;line-height:1.9;color:#888;animation:hni 1s 3.1s ease both;}
-.hero-desc strong{color:var(--w);}
+.hero-desc strong{color:var(–w);}
 .hero-btns{margin-top:36px;display:flex;gap:14px;animation:hni 1s 3.3s ease both;}
 .btn-p{padding:11px 28px;font-family:‘Share Tech Mono’;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
-text-decoration:none;cursor:pointer;background:var(--g);color:#000;font-weight:700;border:none;transition:all .3s;
+text-decoration:none;cursor:none;background:var(–g);color:#000;font-weight:700;border:none;transition:all .3s;
 display:inline-block;box-shadow:0 0 28px rgba(0,255,136,.28);}
 .btn-p:hover{background:#fff;box-shadow:0 0 48px rgba(0,255,136,.5);}
 .btn-g{padding:11px 28px;font-family:‘Share Tech Mono’;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
-text-decoration:none;cursor:pointer;background:transparent;color:var(--w);border:1px solid var(--border);
+text-decoration:none;cursor:none;background:transparent;color:var(–w);border:1px solid var(–border);
 transition:all .3s;display:inline-block;}
-.btn-g:hover{border-color:rgba(255,255,255,.28);color:var(--g);}
-.hero-ticker{border-top:1px solid var(--border);padding:14px 0;display:flex;gap:44px;overflow:hidden;position:relative;z-index:2;flex-wrap:wrap;}
-.ti{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:.62rem;letter-spacing:2px;color:var(--mid);text-transform:uppercase;}
-.ti .tv{color:var(--w);}
+.btn-g:hover{border-color:rgba(255,255,255,.28);color:var(–g);}
+.hero-ticker{border-top:1px solid var(–border);padding:14px 0;display:flex;gap:44px;overflow:hidden;position:relative;z-index:2;flex-wrap:wrap;}
+.ti{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:.62rem;letter-spacing:2px;color:var(–mid);text-transform:uppercase;}
+.ti .tv{color:var(–w);}
 
 /* ABOUT */
-#about{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+#about{background:var(–bg2);border-top:1px solid var(–border);border-bottom:1px solid var(–border);}
 .about-grid{display:grid;grid-template-columns:3fr 2fr;gap:44px;align-items:start;}
 .about-body{font-family:‘Inconsolata’;font-size:.92rem;line-height:1.95;color:#888;}
 .about-body p{margin-bottom:14px;}
-.about-body strong{color:var(--w);}
-.about-body .hl{color:var(--g);}
-.about-sidebar{background:var(--panel);border:1px solid var(--border);padding:24px;}
-.as-title{font-size:.58rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;margin-bottom:16px;}
+.about-body strong{color:var(–w);}
+.about-body .hl{color:var(–g);}
+.about-sidebar{background:var(–panel);border:1px solid var(–border);padding:24px;}
+.as-title{font-size:.58rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;margin-bottom:16px;}
 .as-row{display:flex;justify-content:space-between;align-items:center;
-padding:9px 0;border-bottom:1px solid var(--border);font-size:.72rem;}
+padding:9px 0;border-bottom:1px solid var(–border);font-size:.72rem;}
 .as-row:last-child{border:none;}
-.as-k{color:var(--mid);}
-.as-v{color:var(--w);}
-.as-v.green{color:var(--g);}
+.as-k{color:var(–mid);}
+.as-v{color:var(–w);}
+.as-v.green{color:var(–g);}
 
 /* SKILLS */
-#skills{background:var(--bg);}
-.skills-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-.sk{background:var(--panel);padding:28px 24px;transition:background .3s;position:relative;}
+#skills{background:var(–bg);}
+.skills-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border);border:1px solid var(–border);}
+.sk{background:var(–panel);padding:28px 24px;transition:background .3s;position:relative;}
 .sk:hover{background:#0e0e18;}
 .sk-icon{font-size:1.4rem;margin-bottom:10px;}
-.sk-head{font-family:‘Bebas Neue’;font-size:1.05rem;letter-spacing:3px;color:var(--w);margin-bottom:14px;}
+.sk-head{font-family:‘Bebas Neue’;font-size:1.05rem;letter-spacing:3px;color:var(–w);margin-bottom:14px;}
 .sk-list{list-style:none;}
 .sk-list li{font-size:.74rem;color:#666;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);
 display:flex;align-items:center;gap:8px;transition:color .2s;}
 .sk:hover .sk-list li{color:#999;}
-.sk-list li::before{content:’›’;color:var(--g);}
-.sk-tag{margin-left:auto;font-size:.52rem;padding:2px 6px;border:1px solid rgba(0,255,136,.2);color:var(--g);letter-spacing:1px;}
+.sk-list li::before{content:’›’;color:var(–g);}
+.sk-tag{margin-left:auto;font-size:.52rem;padding:2px 6px;border:1px solid rgba(0,255,136,.2);color:var(–g);letter-spacing:1px;}
 
 /* EDUCATION */
-#education{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.edu-list{display:flex;flex-direction:column;gap:1px;background:var(--border);}
-.eb{background:var(--panel);display:grid;grid-template-columns:160px 1fr;transition:background .3s;}
+#education{background:var(–bg2);border-top:1px solid var(–border);border-bottom:1px solid var(–border);}
+.edu-list{display:flex;flex-direction:column;gap:1px;background:var(–border);}
+.eb{background:var(–panel);display:grid;grid-template-columns:160px 1fr;transition:background .3s;}
 .eb:hover{background:#0e0e16;}
-.eb-left{padding:28px 20px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:8px;justify-content:center;}
-.eb-year{font-family:‘Bebas Neue’;font-size:1.5rem;letter-spacing:2px;color:var(--w);line-height:1.2;}
+.eb-left{padding:28px 20px;border-right:1px solid var(–border);display:flex;flex-direction:column;gap:8px;justify-content:center;}
+.eb-year{font-family:‘Bebas Neue’;font-size:1.5rem;letter-spacing:2px;color:var(–w);line-height:1.2;}
 .eb-badge{display:inline-block;padding:3px 8px;font-size:.52rem;letter-spacing:2px;text-transform:uppercase;border:1px solid;width:fit-content;}
-.eb-badge.live{border-color:var(--g);color:var(--g);}
-.eb-badge.done{border-color:var(--dim);color:var(--mid);}
+.eb-badge.live{border-color:var(–g);color:var(–g);}
+.eb-badge.done{border-color:var(–dim);color:var(–mid);}
 .eb-right{padding:28px 32px;}
-.eb-degree{font-family:‘Bebas Neue’;font-size:1.15rem;letter-spacing:3px;color:var(--g);margin-bottom:5px;}
+.eb-degree{font-family:‘Bebas Neue’;font-size:1.15rem;letter-spacing:3px;color:var(–g);margin-bottom:5px;}
 .eb-inst{font-size:.82rem;color:#777;margin-bottom:14px;}
 .eb-tags{display:flex;flex-wrap:wrap;gap:7px;}
-.etag{font-size:.55rem;padding:2px 9px;letter-spacing:1px;border:1px solid var(--border);color:var(--mid);text-transform:uppercase;}
+.etag{font-size:.55rem;padding:2px 9px;letter-spacing:1px;border:1px solid var(–border);color:var(–mid);text-transform:uppercase;}
 
 /* CERTIFICATES */
-#certificates{background:var(--bg);}
-.cert-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1px;}
-.cst{background:var(--panel);padding:18px 20px;text-align:center;}
-.cst-val{font-family:‘Bebas Neue’;font-size:2rem;color:var(--g);text-shadow:0 0 18px rgba(0,255,136,.25);line-height:1;}
-.cst-lbl{font-size:.55rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;margin-top:3px;}
-.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-.cert-card{background:var(--panel);padding:26px 22px;cursor:pointer;transition:all .3s;
+#certificates{background:var(–bg);}
+.cert-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(–border);border:1px solid var(–border);margin-bottom:1px;}
+.cst{background:var(–panel);padding:18px 20px;text-align:center;}
+.cst-val{font-family:‘Bebas Neue’;font-size:2rem;color:var(–g);text-shadow:0 0 18px rgba(0,255,136,.25);line-height:1;}
+.cst-lbl{font-size:.55rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;margin-top:3px;}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border);border:1px solid var(–border);}
+.cert-card{background:var(–panel);padding:26px 22px;cursor:none;transition:all .3s;
 position:relative;overflow:hidden;border-left:3px solid transparent;}
 .cert-card::before{content:’’;position:absolute;inset:0;
 background:linear-gradient(135deg,rgba(0,255,136,.03),transparent 60%);opacity:0;transition:opacity .3s;}
-.cert-card:hover{background:#0e0e18;border-left-color:var(--g);}
+.cert-card:hover{background:#0e0e18;border-left-color:var(–g);}
 .cert-card:hover::before{opacity:1;}
-.cert-card:hover .cc-view{color:var(--g);letter-spacing:3px;}
+.cert-card:hover .cc-view{color:var(–g);letter-spacing:3px;}
 .cert-card:hover .cc-icon{transform:scale(1.1);}
 .cc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
 .cc-num{font-family:‘Bebas Neue’;font-size:2.2rem;color:rgba(255,255,255,.05);line-height:1;}
-.cc-tag{font-size:.52rem;padding:2px 7px;letter-spacing:2px;border:1px solid rgba(0,255,136,.22);color:var(--g);text-transform:uppercase;}
+.cc-tag{font-size:.52rem;padding:2px 7px;letter-spacing:2px;border:1px solid rgba(0,255,136,.22);color:var(–g);text-transform:uppercase;}
 .cc-icon{font-size:1.6rem;margin-bottom:10px;transition:transform .3s;display:block;}
-.cc-name{font-family:‘Bebas Neue’;font-size:1.1rem;letter-spacing:2px;color:var(--w);margin-bottom:12px;line-height:1.3;}
-.cc-meta{display:flex;flex-direction:column;gap:3px;margin-bottom:14px;padding-top:12px;border-top:1px solid var(--border);}
-.cc-issuer{font-size:.6rem;letter-spacing:2px;color:var(--g);text-transform:uppercase;}
-.cc-period{font-size:.62rem;color:var(--mid);}
+.cc-name{font-family:‘Bebas Neue’;font-size:1.1rem;letter-spacing:2px;color:var(–w);margin-bottom:12px;line-height:1.3;}
+.cc-meta{display:flex;flex-direction:column;gap:3px;margin-bottom:14px;padding-top:12px;border-top:1px solid var(–border);}
+.cc-issuer{font-size:.6rem;letter-spacing:2px;color:var(–g);text-transform:uppercase;}
+.cc-period{font-size:.62rem;color:var(–mid);}
 .cc-footer{display:flex;justify-content:space-between;align-items:center;}
-.cc-grade{font-size:.58rem;letter-spacing:2px;color:var(--mid);text-transform:uppercase;}
-.cc-grade span{color:var(--g);font-size:.75rem;margin-left:3px;}
-.cc-view{font-size:.55rem;letter-spacing:2px;color:var(--mid);text-transform:uppercase;transition:all .3s;}
-.cert-strip{background:var(--panel);border:1px solid var(--gborder);padding:14px 24px;
+.cc-grade{font-size:.58rem;letter-spacing:2px;color:var(–mid);text-transform:uppercase;}
+.cc-grade span{color:var(–g);font-size:.75rem;margin-left:3px;}
+.cc-view{font-size:.55rem;letter-spacing:2px;color:var(–mid);text-transform:uppercase;transition:all .3s;}
+.cert-strip{background:var(–panel);border:1px solid var(–gborder);padding:14px 24px;
 display:flex;align-items:center;justify-content:space-between;margin-top:1px;}
 .cs-left{display:flex;align-items:center;gap:14px;}
-.cs-check{font-size:1.1rem;color:var(--g);}
-.cs-text{font-size:.65rem;letter-spacing:2px;color:var(--g);text-transform:uppercase;}
-.cs-sub{font-size:.58rem;color:var(--mid);margin-top:2px;}
-.cs-right{font-size:.58rem;letter-spacing:2px;color:var(--mid);}
-.cs-right span{color:var(--g);}
+.cs-check{font-size:1.1rem;color:var(–g);}
+.cs-text{font-size:.65rem;letter-spacing:2px;color:var(–g);text-transform:uppercase;}
+.cs-sub{font-size:.58rem;color:var(–mid);margin-top:2px;}
+.cs-right{font-size:.58rem;letter-spacing:2px;color:var(–mid);}
+.cs-right span{color:var(–g);}
 
 /* CERT MODAL */
 #cert-modal{position:fixed;inset:0;z-index:8000;background:rgba(0,0,0,.92);
 display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
 #cert-modal.open{display:flex;}
-.cm-box{position:relative;background:var(--panel);border:1px solid var(--gborder);
+.cm-box{position:relative;background:var(–panel);border:1px solid var(–gborder);
 max-width:580px;width:90%;max-height:92vh;overflow:hidden;
 box-shadow:0 0 60px rgba(0,255,136,.1);animation:cmin .3s ease;}
 @keyframes cmin{from{opacity:0;transform:scale(.95) translateY(16px);}to{opacity:1;transform:none;}}
-.cm-bar{background:#111116;border-bottom:1px solid var(--border);padding:11px 18px;
+.cm-bar{background:#111116;border-bottom:1px solid var(–border);padding:11px 18px;
 display:flex;align-items:center;gap:12px;}
 .cm-dots{display:flex;gap:6px;}
 .cmd{width:10px;height:10px;border-radius:50%;}
 .cmd.r{background:#ff5f56;} .cmd.y{background:#ffbd2e;} .cmd.g2{background:#27c93f;}
-.cm-title{flex:1;text-align:center;font-size:.62rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;}
-.cm-close{background:transparent;border:1px solid var(--border);color:var(--mid);
-font-family:‘Share Tech Mono’;font-size:.6rem;letter-spacing:2px;padding:3px 10px;cursor:pointer;transition:all .2s;text-transform:uppercase;}
-.cm-close:hover{border-color:var(--r);color:var(--r);}
+.cm-title{flex:1;text-align:center;font-size:.62rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;}
+.cm-close{background:transparent;border:1px solid var(–border);color:var(–mid);
+font-family:‘Share Tech Mono’;font-size:.6rem;letter-spacing:2px;padding:3px 10px;cursor:none;transition:all .2s;text-transform:uppercase;}
+.cm-close:hover{border-color:var(–r);color:var(–r);}
 .cm-img-wrap{position:relative;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;}
 #cm-img{width:100%;max-height:calc(92vh - 92px);object-fit:contain;display:block;filter:contrast(1.04) saturate(.92);}
 .cm-img-wrap::after{content:’’;position:absolute;inset:0;
@@ -197,89 +197,89 @@ background:linear-gradient(90deg,transparent,rgba(0,255,136,.18),transparent);
 animation:cmscan 3s linear infinite;pointer-events:none;}
 @keyframes cmscan{0%{top:0;}100%{top:100%;}}
 .cm-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.75);
-border:1px solid var(--gborder);padding:5px 10px;backdrop-filter:blur(4px);}
-.cm-bl{font-size:.52rem;letter-spacing:3px;color:var(--g);text-transform:uppercase;}
-.cm-bn{font-size:.76rem;color:var(--w);margin-top:2px;}
+border:1px solid var(–gborder);padding:5px 10px;backdrop-filter:blur(4px);}
+.cm-bl{font-size:.52rem;letter-spacing:3px;color:var(–g);text-transform:uppercase;}
+.cm-bn{font-size:.76rem;color:var(–w);margin-top:2px;}
 .cm-ver{position:absolute;bottom:10px;right:10px;background:rgba(0,255,136,.1);
-border:1px solid var(--gborder);padding:5px 12px;backdrop-filter:blur(4px);
-font-size:.58rem;letter-spacing:2px;color:var(--g);text-transform:uppercase;}
+border:1px solid var(–gborder);padding:5px 12px;backdrop-filter:blur(4px);
+font-size:.58rem;letter-spacing:2px;color:var(–g);text-transform:uppercase;}
 
 /* PROJECTS */
-#projects{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.proj-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);}
-.pi{background:var(--panel);display:grid;grid-template-columns:72px 1fr 150px;
+#projects{background:var(–bg2);border-top:1px solid var(–border);border-bottom:1px solid var(–border);}
+.proj-list{display:flex;flex-direction:column;gap:1px;background:var(–border);border:1px solid var(–border);}
+.pi{background:var(–panel);display:grid;grid-template-columns:72px 1fr 150px;
 align-items:center;gap:28px;padding:28px 32px;transition:all .3s;border-left:3px solid transparent;}
-.pi:hover{background:#0e0e16;border-left-color:var(--g);}
+.pi:hover{background:#0e0e16;border-left-color:var(–g);}
 .pi-num{font-family:‘Bebas Neue’;font-size:3.2rem;color:rgba(255,255,255,.05);line-height:1;}
-.pi-name{font-family:‘Bebas Neue’;font-size:1.15rem;letter-spacing:3px;color:var(--w);margin-bottom:7px;}
+.pi-name{font-family:‘Bebas Neue’;font-size:1.15rem;letter-spacing:3px;color:var(–w);margin-bottom:7px;}
 .pi-desc{font-size:.78rem;color:#666;line-height:1.7;margin-bottom:11px;}
 .pi-tags{display:flex;gap:7px;flex-wrap:wrap;}
 .ptag{font-size:.55rem;padding:2px 7px;background:rgba(0,255,136,.05);
-border:1px solid rgba(0,255,136,.15);color:var(--g);letter-spacing:1px;text-transform:uppercase;}
+border:1px solid rgba(0,255,136,.15);color:var(–g);letter-spacing:1px;text-transform:uppercase;}
 .pi-meta{text-align:right;}
-.pi-sl{font-size:.52rem;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-bottom:3px;}
+.pi-sl{font-size:.52rem;letter-spacing:2px;color:var(–dim);text-transform:uppercase;margin-bottom:3px;}
 .pi-sv{font-size:.7rem;letter-spacing:1px;}
-.pi-sv.done{color:var(--g);} .pi-sv.wip{color:var(--y);}
+.pi-sv.done{color:var(–g);} .pi-sv.wip{color:var(–y);}
 
 /* TERMINAL */
-#terminal{background:var(--bg);}
-.term-wrap{background:var(--panel);border:1px solid var(--border);overflow:hidden;max-width:860px;margin:0 auto;}
-.term-bar{background:#111116;border-bottom:1px solid var(--border);padding:11px 18px;display:flex;align-items:center;gap:12px;}
+#terminal{background:var(–bg);}
+.term-wrap{background:var(–panel);border:1px solid var(–border);overflow:hidden;max-width:860px;margin:0 auto;}
+.term-bar{background:#111116;border-bottom:1px solid var(–border);padding:11px 18px;display:flex;align-items:center;gap:12px;}
 .term-dots{display:flex;gap:6px;}
 .td{width:10px;height:10px;border-radius:50%;}
 .td.r{background:#ff5f56;} .td.y{background:#ffbd2e;} .td.g2{background:#27c93f;}
-.term-title{flex:1;text-align:center;font-size:.62rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;}
+.term-title{flex:1;text-align:center;font-size:.62rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;}
 .term-body{padding:24px;min-height:320px;max-height:420px;overflow-y:auto;font-size:.82rem;line-height:1.85;}
 .term-body::-webkit-scrollbar{width:2px;}
-.term-body::-webkit-scrollbar-thumb{background:var(--g);}
+.term-body::-webkit-scrollbar-thumb{background:var(–g);}
 .to{margin-bottom:6px;}
-.to .pr{color:var(--g);} .to .cm{color:var(--w);}
+.to .pr{color:var(–g);} .to .cm{color:var(–w);}
 .to .rs{color:#666;display:block;padding-left:18px;margin-top:2px;}
-.to .rs.hi{color:var(--g);} .to .rs.wa{color:var(--y);} .to .rs.er{color:var(--r);}
+.to .rs.hi{color:var(–g);} .to .rs.wa{color:var(–y);} .to .rs.er{color:var(–r);}
 .term-input-row{display:flex;align-items:center;gap:8px;margin-top:14px;}
-.tip-lbl{color:var(--g);white-space:nowrap;font-size:.82rem;}
-.tip{flex:1;background:transparent;border:none;outline:none;color:var(--w);
-font-family:‘Share Tech Mono’;font-size:.82rem;caret-color:var(--g);}
-.term-hint{margin-top:14px;font-size:.6rem;color:var(--dim);letter-spacing:1px;
-border-top:1px solid var(--border);padding-top:10px;}
-.term-hint span{color:var(--g);}
+.tip-lbl{color:var(–g);white-space:nowrap;font-size:.82rem;}
+.tip{flex:1;background:transparent;border:none;outline:none;color:var(–w);
+font-family:‘Share Tech Mono’;font-size:.82rem;caret-color:var(–g);cursor:none;}
+.term-hint{margin-top:14px;font-size:.6rem;color:var(–dim);letter-spacing:1px;
+border-top:1px solid var(–border);padding-top:10px;}
+.term-hint span{color:var(–g);}
 
 /* CONTACT */
-#contact{background:var(--bg2);border-top:1px solid var(--border);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
-.socials{background:var(--panel);padding:36px;}
-.soc-title{font-size:.58rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;margin-bottom:20px;}
+#contact{background:var(–bg2);border-top:1px solid var(–border);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(–border);border:1px solid var(–border);}
+.socials{background:var(–panel);padding:36px;}
+.soc-title{font-size:.58rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;margin-bottom:20px;}
 .soc-link{display:flex;align-items:center;gap:14px;padding:14px 0;
-border-bottom:1px solid var(--border);text-decoration:none;color:var(--w);transition:all .2s;}
+border-bottom:1px solid var(–border);text-decoration:none;color:var(–w);transition:all .2s;}
 .soc-link:last-child{border:none;}
-.soc-link:hover{color:var(--g);padding-left:6px;}
-.soc-icon{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;
-justify-content:center;color:var(--mid);flex-shrink:0;transition:all .2s;}
-.soc-link:hover .soc-icon{border-color:var(--g);color:var(--g);}
+.soc-link:hover{color:var(–g);padding-left:6px;}
+.soc-icon{width:34px;height:34px;border:1px solid var(–border);display:flex;align-items:center;
+justify-content:center;color:var(–mid);flex-shrink:0;transition:all .2s;}
+.soc-link:hover .soc-icon{border-color:var(–g);color:var(–g);}
 .soc-icon svg{width:15px;height:15px;}
-.soc-plat{font-size:.55rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;margin-bottom:1px;}
+.soc-plat{font-size:.55rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;margin-bottom:1px;}
 .soc-handle{font-size:.78rem;}
-.soc-arr{margin-left:auto;color:var(--dim);transition:all .2s;}
-.soc-link:hover .soc-arr{color:var(--g);transform:translateX(4px);}
-.contact-form{background:var(--panel);padding:36px;border-left:1px solid var(--border);}
-.cf-title{font-size:.58rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;margin-bottom:20px;}
+.soc-arr{margin-left:auto;color:var(–dim);transition:all .2s;}
+.soc-link:hover .soc-arr{color:var(–g);transform:translateX(4px);}
+.contact-form{background:var(–panel);padding:36px;border-left:1px solid var(–border);}
+.cf-title{font-size:.58rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;margin-bottom:20px;}
 .cf-group{margin-bottom:18px;}
-.cf-label{display:block;font-size:.55rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;margin-bottom:6px;}
-.cf-input,.cf-textarea{width:100%;background:rgba(255,255,255,.02);border:1px solid var(--border);
-color:var(--w);font-family:‘Share Tech Mono’;font-size:.8rem;padding:9px 12px;outline:none;transition:border-color .2s;resize:none;}
+.cf-label{display:block;font-size:.55rem;letter-spacing:3px;color:var(–mid);text-transform:uppercase;margin-bottom:6px;}
+.cf-input,.cf-textarea{width:100%;background:rgba(255,255,255,.02);border:1px solid var(–border);
+color:var(–w);font-family:‘Share Tech Mono’;font-size:.8rem;padding:9px 12px;outline:none;transition:border-color .2s;resize:none;cursor:none;}
 .cf-input:focus,.cf-textarea:focus{border-color:rgba(0,255,136,.4);}
 .cf-textarea{height:86px;}
-.cf-btn{width:100%;padding:11px;background:transparent;border:1px solid var(--g);color:var(--g);
-font-family:‘Share Tech Mono’;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;cursor:pointer;transition:all .3s;}
-.cf-btn:hover{background:var(--g);color:#000;}
+.cf-btn{width:100%;padding:11px;background:transparent;border:1px solid var(–g);color:var(–g);
+font-family:‘Share Tech Mono’;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;cursor:none;transition:all .3s;}
+.cf-btn:hover{background:var(–g);color:#000;}
 
 /* FOOTER */
-footer{padding:24px 5%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--bg);}
-.ft-l{font-size:.6rem;letter-spacing:2px;color:var(--dim);}
-.ft-l span{color:var(--g);}
+footer{padding:24px 5%;border-top:1px solid var(–border);display:flex;justify-content:space-between;align-items:center;background:var(–bg);}
+.ft-l{font-size:.6rem;letter-spacing:2px;color:var(–dim);}
+.ft-l span{color:var(–g);}
 .ft-r{display:flex;gap:20px;}
-.ft-s{font-size:.58rem;letter-spacing:2px;color:var(--dim);text-transform:uppercase;}
-.ft-s.live{color:var(--g);}
+.ft-s{font-size:.58rem;letter-spacing:2px;color:var(–dim);text-transform:uppercase;}
+.ft-s.live{color:var(–g);}
 
 /* REVEAL */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
@@ -289,7 +289,7 @@ footer{padding:24px 5%;border-top:1px solid var(--border);display:flex;justify-c
 
 /* SCROLLBAR */
 ::-webkit-scrollbar{width:2px;}
-::-webkit-scrollbar-thumb{background:var(--g);}
+::-webkit-scrollbar-thumb{background:var(–g);}
 
 @media(max-width:960px){
 .about-grid,.contact-grid{grid-template-columns:1fr;}
@@ -299,7 +299,7 @@ footer{padding:24px 5%;border-top:1px solid var(--border);display:flex;justify-c
 .pi{grid-template-columns:1fr;gap:12px;}
 .pi-num,.pi-meta{display:none;}
 .n-links{display:none;}
-.contact-form{border-left:none;border-top:1px solid var(--border);}
+.contact-form{border-left:none;border-top:1px solid var(–border);}
 }
 @media(max-width:580px){
 .skills-wrap,.cert-grid{grid-template-columns:1fr;}
@@ -308,60 +308,66 @@ footer{padding:24px 5%;border-top:1px solid var(--border);display:flex;justify-c
 section{padding:80px 5%;}
 }
 
-/* MATRIX RAIN */
-#matrix-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.07;}
+/* ── SECURITY: Disable text selection globally ── */
 
-/* GLITCH */
-.glitch{position:relative;display:inline-block;}
-.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;}
-.glitch::before{left:2px;text-shadow:-2px 0 #ff2244;clip:rect(44px,450px,56px,0);animation:glitch-a 5s infinite linear alternate-reverse;}
-.glitch::after{left:-2px;text-shadow:-2px 0 #00ff88;clip:rect(44px,450px,56px,0);animation:glitch-b 3s infinite linear alternate-reverse;}
-@keyframes glitch-a{0%{clip:rect(31px,9999px,94px,0);}20%{clip:rect(12px,9999px,96px,0);}40%{clip:rect(66px,9999px,98px,0);}60%{clip:rect(38px,9999px,81px,0);}80%{clip:rect(72px,9999px,93px,0);}100%{clip:rect(60px,9999px,99px,0);}}
-@keyframes glitch-b{0%{clip:rect(65px,9999px,99px,0);}20%{clip:rect(28px,9999px,55px,0);}40%{clip:rect(77px,9999px,95px,0);}60%{clip:rect(21px,9999px,53px,0);}80%{clip:rect(25px,9999px,60px,0);}100%{clip:rect(52px,9999px,86px,0);}}
+- {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  }
+  input, textarea {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+  }
+  /* ── SECURITY: Screenshot deterrent overlay on cert modal ── */
+  .cm-img-wrap {
+  position: relative !important;
+  }
+  /* Watermark layer */
+  .cert-watermark {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  }
+  .cert-watermark-row {
+  display: flex;
+  gap: 60px;
+  opacity: 0.13;
+  transform: rotate(-30deg);
+  white-space: nowrap;
+  }
+  .cert-watermark span {
+  font-family: ‘Share Tech Mono’, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #ff2244;
+  text-transform: uppercase;
+  user-select: none !important;
+  }
+  /* Dark hover protection - dims cert on mouse hover */
+  #cm-img {
+  transition: filter 0.2s;
+  }
+  .cm-img-wrap:hover #cm-img {
+  filter: contrast(1.04) saturate(.92) brightness(0.88) !important;
+  }
 
-/* ENHANCED SVG ICON GLOW */
-.sk-icon svg,.cc-icon svg{width:24px;height:24px;stroke:var(--g);filter:drop-shadow(0 0 6px var(--g));transition:filter .3s;}
-.sk:hover .sk-icon svg{filter:drop-shadow(0 0 14px var(--g));}
-.cert-card:hover .cc-icon svg{filter:drop-shadow(0 0 14px var(--g));}
-.cs-check svg{width:18px;height:18px;stroke:var(--g);filter:drop-shadow(0 0 6px var(--g));}
-.cm-ver svg{width:14px;height:14px;stroke:var(--g);vertical-align:middle;margin-right:4px;}
-
-/* HACK SIM */
-.hack-bar{display:inline-block;width:180px;height:6px;background:var(--dim);overflow:hidden;vertical-align:middle;margin-left:6px;}
-.hack-fill{height:100%;background:var(--g);box-shadow:0 0 8px var(--g);transition:width .8s ease;}
-
-/* GAME MODAL */
-#game-modal{position:fixed;inset:0;z-index:8000;background:rgba(0,0,0,.92);
-display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
-#game-modal.open{display:flex;}
-.gm-box{position:relative;background:var(--panel);border:1px solid var(--gborder);
-max-width:500px;width:95%;box-shadow:0 0 60px rgba(0,255,136,.1);animation:cmin .3s ease;}
-.gm-bar{background:#111116;border-bottom:1px solid rgba(255,255,255,.07);padding:11px 18px;
-display:flex;align-items:center;gap:12px;}
-.gm-title{flex:1;text-align:center;font-size:.62rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;}
-.gm-close{background:transparent;border:1px solid rgba(255,255,255,.07);color:var(--mid);
-font-family:'Share Tech Mono';font-size:.6rem;letter-spacing:2px;padding:3px 10px;cursor:pointer;transition:all .2s;text-transform:uppercase;}
-.gm-close:hover{border-color:var(--r);color:var(--r);}
-.gm-body{padding:16px;display:flex;flex-direction:column;align-items:center;gap:12px;min-height:200px;}
-#game-canvas{display:none;border:1px solid rgba(0,255,136,.15);max-width:100%;}
-#game-board{display:none;}
-#game-info{font-size:.7rem;color:var(--g);letter-spacing:2px;text-transform:uppercase;text-align:center;min-height:18px;}
-.ttt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:240px;height:240px;}
-.ttt-cell{background:rgba(0,255,136,.05);border:1px solid rgba(0,255,136,.15);display:flex;align-items:center;
-justify-content:center;font-family:'Bebas Neue';font-size:2.5rem;cursor:pointer;transition:all .2s;color:var(--g);}
-.ttt-cell:hover{background:rgba(0,255,136,.1);}.ttt-cell.x{color:var(--g);}.ttt-cell.o{color:var(--r);}
-.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:288px;}
-.mem-card{width:66px;height:66px;background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.12);
-display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;transition:all .3s;user-select:none;color:transparent;}
-.mem-card.flipped,.mem-card.matched{background:rgba(0,255,136,.15);border-color:var(--g);color:var(--g);}
-.mem-card.matched{opacity:.5;cursor:default;}
 </style>
-
 </head>
 <body>
-<canvas id="matrix-canvas"></canvas>
 
 <!-- BOOT -->
+
+  <div>ACCESS DENIED</div>
+  <div style="font-size:.8rem;color:#666;letter-spacing:3px;">CLOSE DEVELOPER TOOLS TO CONTINUE</div>
+</div>
 
 <div id="boot"><div id="boot-lines"></div></div>
 
@@ -382,23 +388,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
       <div class="cm-scan"></div>
       <img id="cm-img" src="" alt="Certificate">
       <div class="cm-badge"><div class="cm-bl">NETTECH INDIA · ISO 9001:2015</div><div class="cm-bn" id="cm-name"></div></div>
-      <div class="cm-ver"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>GRADE A - VERIFIED</div>
-    </div>
-  </div>
-</div>
-
-<!-- GAME MODAL -->
-<div id="game-modal" onclick="closeGame(event)">
-  <div class="gm-box">
-    <div class="gm-bar">
-      <div class="gm-dots"><div class="cmd r"></div><div class="cmd y"></div><div class="cmd g2"></div></div>
-      <div class="gm-title" id="gm-title">GAME</div>
-      <button class="gm-close" onclick="closeGame()">[ CLOSE × ]</button>
-    </div>
-    <div class="gm-body" id="gm-body">
-      <canvas id="game-canvas"></canvas>
-      <div id="game-board"></div>
-      <div id="game-info"></div>
+      <div class="cm-ver">✓ GRADE A — VERIFIED</div>
     </div>
   </div>
 </div>
@@ -424,8 +414,8 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <section id="hero">
   <div class="hero-bg">RAHUL</div>
   <div class="hero-main">
-    <div class="hero-eye">ETHICAL HACKER // CYBERSECURITY // B.Sc CS - YEAR 3</div>
-    <div class="hero-name glitch" data-text="RAHUL">RAH<span class="accent">UL</span></div>
+    <div class="hero-eye">ETHICAL HACKER // CYBERSECURITY // B.Sc CS — YEAR 3</div>
+    <div class="hero-name">RAH<span class="accent">UL</span></div>
     <div class="hero-sub"><span>Penetration Tester</span> &nbsp;/&nbsp; CTF Player &nbsp;/&nbsp; <span>CS Student</span></div>
     <p class="hero-desc">I find the vulnerabilities <strong>before the attackers do.</strong><br>
       B.Sc CS student (3rd Year) specializing in cybersecurity, ethical hacking, and offensive security research.</p>
@@ -436,7 +426,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
   </div>
   <div class="hero-ticker">
     <div class="ti">STATUS <span style="color:var(--dim)">//</span> <span class="tv" style="color:var(--g)">ONLINE</span></div>
-    <div class="ti">DEGREE <span style="color:var(--dim)">//</span> <span class="tv">B.Sc CS - Year 3</span></div>
+    <div class="ti">DEGREE <span style="color:var(--dim)">//</span> <span class="tv">B.Sc CS — Year 3</span></div>
     <div class="ti">SPECIALTY <span style="color:var(--dim)">//</span> <span class="tv">PenTest · CTF · OSINT</span></div>
     <div class="ti">TOOLS <span style="color:var(--dim)">//</span> <span class="tv">Kali · Metasploit · Burp Suite</span></div>
     <div class="ti">CERTS <span style="color:var(--dim)">//</span> <span class="tv" style="color:var(--g)">06 · All Grade A</span></div>
@@ -446,18 +436,18 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <!-- ═══════════════════════════════════ ABOUT ═══════════════════════════════════ -->
 
 <section id="about">
-  <div class="sh rv"><div class="sh-pre">// 01 - Identity</div><div class="sh-title">About <em>Me</em></div><div class="sh-line"></div></div>
+  <div class="sh rv"><div class="sh-pre">// 01 — Identity</div><div class="sh-title">About <em>Me</em></div><div class="sh-line"></div></div>
   <div class="about-grid">
     <div class="about-body rv">
-      <p>I'm <strong>Rahul Prajapati</strong> - a <span class="hl">Cybersecurity &amp; Ethical Hacking</span> enthusiast currently in my <strong>3rd year of B.Sc Computer Science</strong>.</p>
-      <p>My philosophy: you can't defend what you don't understand. So I learn to break things - <strong>legally and ethically</strong> - through penetration testing, CTF competitions, and vulnerability research. Six certifications from NetTech India back that up.</p>
-      <p>Beyond security, I work with <span class="hl">Data Mining, Machine Learning, Computer Graphics, and Predictive Modeling</span> - because the best hackers understand every layer of the stack.</p>
+      <p>I'm <strong>Rahul Prajapati</strong> — a <span class="hl">Cybersecurity &amp; Ethical Hacking</span> enthusiast currently in my <strong>3rd year of B.Sc Computer Science</strong>.</p>
+      <p>My philosophy: you can't defend what you don't understand. So I learn to break things — <strong>legally and ethically</strong> — through penetration testing, CTF competitions, and vulnerability research. Six certifications from NetTech India back that up.</p>
+      <p>Beyond security, I work with <span class="hl">Data Mining, Machine Learning, Computer Graphics, and Predictive Modeling</span> — because the best hackers understand every layer of the stack.</p>
       <p>Currently hunting CTF flags, building security tools like a <strong>Steganography Tool</strong> and a <strong>Network Dashboard</strong>, and leveling up every single day.</p>
     </div>
     <div class="about-sidebar rv">
       <div class="as-title">// Quick Facts</div>
       <div class="as-row"><span class="as-k">Name</span><span class="as-v">Rahul Prajapati</span></div>
-      <div class="as-row"><span class="as-k">Degree</span><span class="as-v">B.Sc CS - Year 3</span></div>
+      <div class="as-row"><span class="as-k">Degree</span><span class="as-v">B.Sc CS — Year 3</span></div>
       <div class="as-row"><span class="as-k">Focus</span><span class="as-v green">Cybersecurity</span></div>
       <div class="as-row"><span class="as-k">Interests</span><span class="as-v">PenTest · CTF · OSINT</span></div>
       <div class="as-row"><span class="as-k">Certs</span><span class="as-v green">06 · All Grade A</span></div>
@@ -471,10 +461,10 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <!-- ═══════════════════════════════════ SKILLS ═══════════════════════════════════ -->
 
 <section id="skills">
-  <div class="sh rv"><div class="sh-pre">// 02 - Capabilities</div><div class="sh-title">Skill <em>Set</em></div><div class="sh-line"></div></div>
+  <div class="sh rv"><div class="sh-pre">// 02 — Capabilities</div><div class="sh-title">Skill <em>Set</em></div><div class="sh-line"></div></div>
   <div class="skills-wrap rv">
     <div class="sk">
-      <div class="sk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L12 2z"/><circle cx="12" cy="10" r="2"/><path d="M12 12v3"/></svg></div><div class="sk-head">Ethical Hacking</div>
+      <div class="sk-icon">🔐</div><div class="sk-head">Ethical Hacking</div>
       <ul class="sk-list">
         <li>Penetration Testing <span class="sk-tag">ADV</span></li>
         <li>Vulnerability Assessment <span class="sk-tag">INT</span></li>
@@ -483,7 +473,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
       </ul>
     </div>
     <div class="sk">
-      <div class="sk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 9l4 3-4 3"/><path d="M12 15h6"/></svg></div><div class="sk-head">Security Tools</div>
+      <div class="sk-icon">🛠</div><div class="sk-head">Security Tools</div>
       <ul class="sk-list">
         <li>Kali Linux <span class="sk-tag">ADV</span></li>
         <li>Metasploit <span class="sk-tag">INT</span></li>
@@ -492,7 +482,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
       </ul>
     </div>
     <div class="sk">
-      <div class="sk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M16 18l6-6-6-6"/><path d="M8 6L2 12l6 6"/></svg></div><div class="sk-head">Programming</div>
+      <div class="sk-icon">💻</div><div class="sk-head">Programming</div>
       <ul class="sk-list">
         <li>Python <span class="sk-tag">ADV</span></li>
         <li>C / C++ <span class="sk-tag">INT</span></li>
@@ -501,7 +491,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
       </ul>
     </div>
     <div class="sk">
-      <div class="sk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5V12"/><path d="M12 12L5 16.5"/><path d="M12 12l7 4.5"/></svg></div><div class="sk-head">Networking</div>
+      <div class="sk-icon">🌐</div><div class="sk-head">Networking</div>
       <ul class="sk-list">
         <li>Packet Analysis <span class="sk-tag">ADV</span></li>
         <li>TCP/IP Stack <span class="sk-tag">ADV</span></li>
@@ -510,7 +500,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
       </ul>
     </div>
     <div class="sk">
-      <div class="sk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg></div><div class="sk-head">AI / Data</div>
+      <div class="sk-icon">🤖</div><div class="sk-head">AI / Data</div>
       <ul class="sk-list">
         <li>Data Mining <span class="sk-tag">INT</span></li>
         <li>Predictive Modeling <span class="sk-tag">INT</span></li>
@@ -519,7 +509,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
       </ul>
     </div>
     <div class="sk">
-      <div class="sk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="sk-head">OSINT</div>
+      <div class="sk-icon">🔍</div><div class="sk-head">OSINT</div>
       <ul class="sk-list">
         <li>Recon Techniques <span class="sk-tag">INT</span></li>
         <li>Digital Forensics <span class="sk-tag">INT</span></li>
@@ -533,13 +523,13 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <!-- ═══════════════════════════════════ EDUCATION ═══════════════════════════════════ -->
 
 <section id="education">
-  <div class="sh rv"><div class="sh-pre">// 03 - Training Log</div><div class="sh-title">Edu<em>cation</em></div><div class="sh-line"></div></div>
+  <div class="sh rv"><div class="sh-pre">// 03 — Training Log</div><div class="sh-title">Edu<em>cation</em></div><div class="sh-line"></div></div>
   <div class="edu-list rv">
     <div class="eb">
       <div class="eb-left"><div class="eb-year">2022 →NOW</div><div class="eb-badge live">YEAR 3 · ACTIVE</div></div>
       <div class="eb-right">
-        <div class="eb-degree">B.Sc - Computer Science</div>
-        <div class="eb-inst">Nalanda University</div>
+        <div class="eb-degree">B.Sc — Computer Science</div>
+        <div class="eb-inst">Your University Name Here</div>
         <div class="eb-tags">
           <span class="etag">Data Mining</span><span class="etag">Theory of Computation</span>
           <span class="etag">Computer Graphics</span><span class="etag">Predictive Modeling</span>
@@ -550,8 +540,8 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
     <div class="eb">
       <div class="eb-left"><div class="eb-year">2020 →2022</div><div class="eb-badge done">DONE</div></div>
       <div class="eb-right">
-        <div class="eb-degree">Higher Secondary - Science </div>
-        <div class="eb-inst">GSSS Shahjahanpur</div>
+        <div class="eb-degree">Higher Secondary — Science / CS</div>
+        <div class="eb-inst">Your School / College Name</div>
         <div class="eb-tags"><span class="etag">Mathematics</span><span class="etag">Computer Science</span><span class="etag">Physics</span></div>
       </div>
     </div>
@@ -569,21 +559,21 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <!-- ═══════════════════════════════════ CERTIFICATES ═══════════════════════════════════ -->
 
 <section id="certificates">
-  <div class="sh rv"><div class="sh-pre">// 04 - Credentials</div><div class="sh-title">Certifi<em>cates</em></div><div class="sh-line"></div></div>
+  <div class="sh rv"><div class="sh-pre">// 04 — Credentials</div><div class="sh-title">Certifi<em>cates</em></div><div class="sh-line"></div></div>
   <div class="cert-stats rv">
     <div class="cst"><div class="cst-val">06</div><div class="cst-lbl">Certificates</div></div>
-    <div class="cst"><div class="cst-val">A</div><div class="cst-lbl">Grade - All</div></div>
+    <div class="cst"><div class="cst-val">A</div><div class="cst-lbl">Grade — All</div></div>
     <div class="cst"><div class="cst-val">2023</div><div class="cst-lbl">Year Earned</div></div>
     <div class="cst"><div class="cst-val">ISO</div><div class="cst-lbl">9001 : 2015</div></div>
   </div>
   <div class="cert-grid">
         <div class="cert-card rv" onclick="openCert('ceh')">
           <div class="cc-top"><div class="cc-num">01</div><div class="cc-tag">CEH</div></div>
-          <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L12 2z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="cc-icon">🔐</div>
           <div class="cc-name">Certified Ethical Hacker</div>
           <div class="cc-meta">
             <span class="cc-issuer">NetTech India</span>
-            <span class="cc-period">Jun - Aug 2023</span>
+            <span class="cc-period">Jun – Aug 2023</span>
           </div>
           <div class="cc-footer">
             <div class="cc-grade">GRADE: <span>A</span></div>
@@ -592,11 +582,11 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
         </div>
         <div class="cert-card rv" onclick="openCert('vapt')">
           <div class="cc-top"><div class="cc-num">02</div><div class="cc-tag">VAPT</div></div>
-          <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L12 2z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M10 11V9a2 2 0 014 0v2"/></svg></div>
+          <div class="cc-icon">🛡️</div>
           <div class="cc-name">Vulnerability Assessment & Pen Testing</div>
           <div class="cc-meta">
             <span class="cc-issuer">NetTech India</span>
-            <span class="cc-period">Aug - Sep 2023</span>
+            <span class="cc-period">Aug – Sep 2023</span>
           </div>
           <div class="cc-footer">
             <div class="cc-grade">GRADE: <span>A</span></div>
@@ -605,11 +595,11 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
         </div>
         <div class="cert-card rv" onclick="openCert('mobile')">
           <div class="cc-top"><div class="cc-num">03</div><div class="cc-tag">MOBILE</div></div>
-          <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/><rect x="9" y="8" width="6" height="4" rx="1"/><path d="M10 8V7a2 2 0 014 0v1"/></svg></div>
+          <div class="cc-icon">📱</div>
           <div class="cc-name">Mobile Hacking</div>
           <div class="cc-meta">
             <span class="cc-issuer">NetTech India</span>
-            <span class="cc-period">Sep - Oct 2023</span>
+            <span class="cc-period">Sep – Oct 2023</span>
           </div>
           <div class="cc-footer">
             <div class="cc-grade">GRADE: <span>A</span></div>
@@ -618,11 +608,11 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
         </div>
         <div class="cert-card rv" onclick="openCert('cloud')">
           <div class="cc-top"><div class="cc-num">04</div><div class="cc-tag">CLOUD</div></div>
-          <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 10h1a4 4 0 010 8H6a4 4 0 01-1-7.9 6 6 0 0111.7-2.3A4 4 0 0118 10z"/><path d="M12 2L9 7v3c0 2.5 1.5 4 3 5 1.5-1 3-2.5 3-5V7L12 2z"/></svg></div>
+          <div class="cc-icon">☁️</div>
           <div class="cc-name">Cloud Security</div>
           <div class="cc-meta">
             <span class="cc-issuer">NetTech India</span>
-            <span class="cc-period">Jul - Aug 2023</span>
+            <span class="cc-period">Jul – Aug 2023</span>
           </div>
           <div class="cc-footer">
             <div class="cc-grade">GRADE: <span>A</span></div>
@@ -631,11 +621,11 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
         </div>
         <div class="cert-card rv" onclick="openCert('cyberlaw')">
           <div class="cc-top"><div class="cc-num">05</div><div class="cc-tag">LAW</div></div>
-          <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M2 16l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="cc-icon">⚖️</div>
           <div class="cc-name">Cyber Law</div>
           <div class="cc-meta">
             <span class="cc-issuer">NetTech India</span>
-            <span class="cc-period">Oct - Nov 2023</span>
+            <span class="cc-period">Oct – Nov 2023</span>
           </div>
           <div class="cc-footer">
             <div class="cc-grade">GRADE: <span>A</span></div>
@@ -644,11 +634,11 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
         </div>
         <div class="cert-card rv" onclick="openCert('ccna')">
           <div class="cc-top"><div class="cc-num">06</div><div class="cc-tag">CCNA</div></div>
-          <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="1"/><path d="M6 12h2M16 12h2"/><path d="M6 9h2M16 9h2M6 15h2M16 15h2"/></svg></div>
-          <div class="cc-name">CCNA - Routing & Switching</div>
+          <div class="cc-icon">🌐</div>
+          <div class="cc-name">CCNA — Routing & Switching</div>
           <div class="cc-meta">
             <span class="cc-issuer">NetTech India</span>
-            <span class="cc-period">May - Jul 2023</span>
+            <span class="cc-period">May – Jul 2023</span>
           </div>
           <div class="cc-footer">
             <div class="cc-grade">GRADE: <span>A</span></div>
@@ -656,7 +646,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
           </div>
         </div></div>
   <div class="cert-strip rv">
-    <div class="cs-left"><div class="cs-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+    <div class="cs-left"><div class="cs-check">✓</div>
       <div><div class="cs-text">All Certificates Verified</div>
       <div class="cs-sub">NetTech India · ISO 9001:2015 · Click any card to view original certificate</div></div>
     </div>
@@ -667,7 +657,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <!-- ═══════════════════════════════════ PROJECTS ═══════════════════════════════════ -->
 
 <section id="projects">
-  <div class="sh rv"><div class="sh-pre">// 05 - Operations</div><div class="sh-title">My <em>Projects</em></div><div class="sh-line"></div></div>
+  <div class="sh rv"><div class="sh-pre">// 05 — Operations</div><div class="sh-title">My <em>Projects</em></div><div class="sh-line"></div></div>
   <div class="proj-list rv">
     <div class="pi">
       <div class="pi-num">01</div>
@@ -690,7 +680,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
     <div class="pi">
       <div class="pi-num">03</div>
       <div>
-        <div class="pi-name">Next Project - Coming Soon</div>
+        <div class="pi-name">Next Project — Coming Soon</div>
         <div class="pi-desc">Always building something new. Next up: exploring advanced penetration testing automation and AI-powered threat detection systems.</div>
         <div class="pi-tags"><span class="ptag">TBD</span><span class="ptag">Security</span><span class="ptag">AI</span></div>
       </div>
@@ -702,7 +692,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <!-- ═══════════════════════════════════ TERMINAL ═══════════════════════════════════ -->
 
 <section id="terminal">
-  <div class="sh rv"><div class="sh-pre">// 06 - Interactive</div><div class="sh-title">Live <em>Terminal</em></div><div class="sh-line"></div></div>
+  <div class="sh rv"><div class="sh-pre">// 06 — Interactive</div><div class="sh-title">Live <em>Terminal</em></div><div class="sh-line"></div></div>
   <div class="term-wrap rv">
     <div class="term-bar">
       <div class="term-dots"><div class="td r"></div><div class="td y"></div><div class="td g2"></div></div>
@@ -721,7 +711,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
         <span class="tip-lbl">rahul@kali:~$&nbsp;</span>
         <input class="tip" id="term-in" type="text" placeholder="type a command..." autocomplete="off" spellcheck="false">
       </div>
-      <div class="term-hint">Try: <span>help</span> · <span>whoami</span> · <span>skills</span> · <span>certs</span> · <span>projects</span> · <span>snake</span> · <span>tictactoe</span> · <span>memory</span> · <span>games</span> · <span>clear</span></div>
+      <div class="term-hint">Try: <span>help</span> · <span>whoami</span> · <span>skills</span> · <span>certs</span> · <span>projects</span> · <span>social</span> · <span>education</span> · <span>contact</span> · <span>tools</span> · <span>clear</span></div>
     </div>
   </div>
 </section>
@@ -729,7 +719,7 @@ display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:p
 <!-- ═══════════════════════════════════ CONTACT ═══════════════════════════════════ -->
 
 <section id="contact">
-  <div class="sh rv"><div class="sh-pre">// 07 - Communications</div><div class="sh-title">Get In <em>Touch</em></div><div class="sh-line"></div></div>
+  <div class="sh rv"><div class="sh-pre">// 07 — Communications</div><div class="sh-title">Get In <em>Touch</em></div><div class="sh-line"></div></div>
   <div class="contact-grid rv">
     <div class="socials">
       <div class="soc-title">// Social &amp; Links</div>
@@ -787,7 +777,7 @@ const CERT_NAMES = {
   "mobile": "Mobile Hacking",
   "cloud": "Cloud Security",
   "cyberlaw": "Cyber Law",
-  "ccna": "CCNA - Routing & Switching",
+  "ccna": "CCNA — Routing & Switching",
 };
 
 // ── CERT MODAL ──
@@ -882,18 +872,10 @@ const CMDS = {
     {t:'',v:'  ctf        → CTF stats'},
     {t:'',v:'  clear      → Clear terminal'},
     {t:'',v:'  matrix     → ;)'},
-    {t:'hi',v:''},
-    {t:'hi',v:'Terminal Games:'},
-    {t:'',v:'  games      → List all games'},
-    {t:'',v:'  snake      → Snake game (arrow keys)'},
-    {t:'',v:'  tictactoe  → Tic-Tac-Toe vs CPU'},
-    {t:'',v:'  memory     → Card matching game'},
-    {t:'',v:'  guess      → Number guessing (1-100)'},
-    {t:'',v:'  quiz       → Cybersecurity trivia'},
   ]},
   whoami:{ run:()=>[
     {t:'hi',v:'> RAHUL PRAJAPATI // Ethical Hacker'},
-    {t:'',v:'  Degree    : B.Sc CS - Year 3'},
+    {t:'',v:'  Degree    : B.Sc CS — Year 3'},
     {t:'',v:'  Specialty : Cybersecurity & Ethical Hacking'},
     {t:'',v:'  Certs     : 06 (All Grade A, NetTech India)'},
     {t:'',v:'  Email     : itsrahulprajapati46@gmail.com'},
@@ -912,12 +894,12 @@ const CMDS = {
   ]},
   certs:{ run:()=>[
     {t:'hi',v:'> CERTIFICATES // All NetTech India · Grade A'},
-    {t:'',v:'  [01] CEH   - Certified Ethical Hacker        Jun-Aug 2023'},
-    {t:'',v:'  [02] VAPT  - Vulnerability Assessment & PenTest Aug-Sep 2023'},
-    {t:'',v:'  [03] Mobile Hacking                          Sep-Oct 2023'},
-    {t:'',v:'  [04] Cloud Security                          Jul-Aug 2023'},
-    {t:'',v:'  [05] Cyber Law                               Oct-Nov 2023'},
-    {t:'',v:'  [06] CCNA  - Routing & Switching             May-Jul 2023'},
+    {t:'',v:'  [01] CEH   — Certified Ethical Hacker        Jun–Aug 2023'},
+    {t:'',v:'  [02] VAPT  — Vulnerability Assessment & PenTest Aug–Sep 2023'},
+    {t:'',v:'  [03] Mobile Hacking                          Sep–Oct 2023'},
+    {t:'',v:'  [04] Cloud Security                          Jul–Aug 2023'},
+    {t:'',v:'  [05] Cyber Law                               Oct–Nov 2023'},
+    {t:'',v:'  [06] CCNA  — Routing & Switching             May–Jul 2023'},
     {t:'wa',v:'  → Click any cert card above to view original'},
   ]},
   projects:{ run:()=>[
@@ -926,12 +908,12 @@ const CMDS = {
     {t:'',v:'       Python · LSB Method · Forensics | COMPLETE'},
     {t:'',v:'  [02] Network Monitoring Dashboard'},
     {t:'',v:'       Python · Scapy · Real-time     | COMPLETE'},
-    {t:'',v:'  [03] Next Project - AI + Security'},
+    {t:'',v:'  [03] Next Project — AI + Security'},
     {t:'',v:'       TBD                            | PLANNING'},
   ]},
   education:{ run:()=>[
     {t:'hi',v:'> TRAINING LOG'},
-    {t:'',v:'  2022→NOW  B.Sc Computer Science - Year 3 [ACTIVE]'},
+    {t:'',v:'  2022→NOW  B.Sc Computer Science — Year 3 [ACTIVE]'},
     {t:'',v:'  2020→2022 Higher Secondary [DONE]'},
     {t:'wa',v:'  Courses: Data Mining, Theory of Computation,'},
     {t:'wa',v:'           Computer Graphics, Predictive Modeling'},
@@ -953,14 +935,14 @@ const CMDS = {
   ]},
   tools:{ run:()=>[
     {t:'hi',v:'> HACKING ARSENAL'},
-    {t:'',v:'  Kali Linux   - Primary OS'},
-    {t:'',v:'  Metasploit   - Exploitation Framework'},
-    {t:'',v:'  Burp Suite   - Web Application Testing'},
-    {t:'',v:'  Nmap         - Network Scanner'},
-    {t:'',v:'  Wireshark    - Packet Analyzer'},
-    {t:'',v:'  John / Hashcat - Password Cracking'},
-    {t:'',v:'  SQLmap       - SQL Injection Tool'},
-    {t:'',v:'  Stego Tools  - Steganography Suite'},
+    {t:'',v:'  Kali Linux   — Primary OS'},
+    {t:'',v:'  Metasploit   — Exploitation Framework'},
+    {t:'',v:'  Burp Suite   — Web Application Testing'},
+    {t:'',v:'  Nmap         — Network Scanner'},
+    {t:'',v:'  Wireshark    — Packet Analyzer'},
+    {t:'',v:'  John / Hashcat — Password Cracking'},
+    {t:'',v:'  SQLmap       — SQL Injection Tool'},
+    {t:'',v:'  Stego Tools  — Steganography Suite'},
   ]},
   ctf:{ run:()=>[
     {t:'hi',v:'> CTF STATS'},
@@ -976,64 +958,9 @@ const CMDS = {
     {t:'',v:'[fsociety was here]'},
   ]},
   clear:{ run:()=>null },
-  games:{ run:()=>[
-    {t:'hi',v:'> TERMINAL GAMES'},
-    {t:'hi',v:'  Real Games (visual):'},
-    {t:'',v:'  snake       → Classic Snake game (arrow keys + R to restart)'},
-    {t:'',v:'  tictactoe   → Tic-Tac-Toe vs CPU'},
-    {t:'',v:'  memory      → Card matching memory game'},
-    {t:'hi',v:'  Text Games:'},
-    {t:'',v:'  guess       → Guess the number (1-100)'},
-    {t:'',v:'  quiz        → Cybersecurity trivia quiz'},
-    {t:'wa',v:'  Try: snake, tictactoe, memory, guess, quiz'},
-  ]},
 };
 
 let cmdHistory=[], hIdx=-1;
-let gameState = null; // null = normal, or {type:'guess',...} etc
-
-// GAME: Guess the number
-function startGuess(){
-  gameState = {type:'guess', target:Math.floor(Math.random()*100)+1, attempts:0};
-  return [{t:'hi',v:'> NUMBER GUESS GAME'},{t:'',v:'  I picked a number between 1 and 100.'},{t:'wa',v:'  Type a number to guess. Type "quit" to exit.'}];
-}
-function handleGuess(v){
-  if(v==='quit'){gameState=null;return [{t:'',v:'  Game exited.'}];}
-  const n=parseInt(v);
-  if(isNaN(n))return [{t:'er',v:'  Enter a number or "quit"'}];
-  gameState.attempts++;
-  if(n===gameState.target){const a=gameState.attempts;gameState=null;return [{t:'hi',v:`  ACCESS GRANTED! The number was ${n}.`},{t:'wa',v:`  Cracked in ${a} attempts.`}];}
-  if(n<gameState.target)return [{t:'',v:`  ${n} → TOO LOW. Try higher.`}];
-  return [{t:'',v:`  ${n} → TOO HIGH. Try lower.`}];
-}
-
-
-
-// GAME: Quiz
-const QUIZ_QS=[
-  {q:'What port does SSH use by default?',o:['A) 21','B) 22','C) 80','D) 443'],a:'b'},
-  {q:'What tool is used for SQL injection?',o:['A) Nmap','B) Wireshark','C) SQLmap','D) Netcat'],a:'c'},
-  {q:'What does CVE stand for?',o:['A) Common Vulnerabilities & Exposures','B) Cyber Virus Engine','C) Code Verification Entity','D) Central Vulnerability Explorer'],a:'a'},
-  {q:'Which protocol does HTTPS use?',o:['A) FTP','B) SSH','C) TLS/SSL','D) SMTP'],a:'c'},
-  {q:'What is a zero-day exploit?',o:['A) An old exploit','B) A patched vulnerability','C) An exploit with no fix','D) A social engineering attack'],a:'c'},
-  {q:'What does OSINT stand for?',o:['A) Open Source Intelligence','B) Operating System Interface','C) Online Security Integration','D) Offensive Strategy Intel'],a:'a'},
-  {q:'Which Linux distro is made for hacking?',o:['A) Ubuntu','B) Fedora','C) Kali Linux','D) Arch Linux'],a:'c'},
-  {q:'What is phishing?',o:['A) Port scanning','B) Fake emails to steal info','C) DDoS attack','D) Brute force'],a:'b'},
-];
-function startQuiz(){
-  const q=QUIZ_QS[Math.floor(Math.random()*QUIZ_QS.length)];
-  gameState={type:'quiz',question:q};
-  return [{t:'hi',v:'> CYBERSECURITY QUIZ'},{t:'',v:'  '+q.q},...q.o.map(o=>({t:'',v:'    '+o})),{t:'wa',v:'  Type a, b, c, or d. Type "quit" to exit.'}];
-}
-function handleQuiz(v){
-  if(v==='quit'){gameState=null;return [{t:'',v:'  Quiz exited.'}];}
-  if(!['a','b','c','d'].includes(v))return [{t:'er',v:'  Type a, b, c, or d'}];
-  const correct=v===gameState.question.a;
-  const correctAns=gameState.question.a.toUpperCase();
-  gameState=null;
-  if(correct)return [{t:'hi',v:'  CORRECT! Access granted.'}];
-  return [{t:'er',v:'  WRONG! The answer was '+correctAns+'. Access denied.'}];
-}
 
 function printLine(cmd, lines){
   if(!lines){ termOut.innerHTML=''; return; }
@@ -1058,26 +985,11 @@ function printErr(cmd){
 
 termIn.addEventListener('keydown', e=>{
   if(e.key==='Enter'){
-    const raw = termIn.value.trim();
-    const v = raw.toLowerCase();
+    const v = termIn.value.trim().toLowerCase();
     if(!v) return;
     cmdHistory.unshift(v); hIdx=-1;
-    termIn.value='';
-    // Handle active game state
-    if(gameState){
-      let lines;
-      if(gameState.type==='guess') lines=handleGuess(v);
-      else if(gameState.type==='quiz') lines=handleQuiz(v);
-      if(lines) printLine(v, lines);
-      return;
-    }
-
-    if(v==='guess'){printLine(v, startGuess());return;}
-    if(v==='quiz'){printLine(v, startQuiz());return;}
-    if(v==='snake'){printLine(v,[{t:'hi',v:'> Launching Snake Game...'}]);setTimeout(launchSnake,300);return;}
-    if(v==='tictactoe'){printLine(v,[{t:'hi',v:'> Launching Tic-Tac-Toe...'}]);setTimeout(launchTTT,300);return;}
-    if(v==='memory'){printLine(v,[{t:'hi',v:'> Launching Memory Game...'}]);setTimeout(launchMemory,300);return;}
     CMDS[v] ? printLine(v, CMDS[v].run()) : printErr(v);
+    termIn.value='';
   } else if(e.key==='ArrowUp'){
     hIdx=Math.min(hIdx+1, cmdHistory.length-1);
     termIn.value=cmdHistory[hIdx]||''; e.preventDefault();
@@ -1107,203 +1019,156 @@ document.querySelectorAll('.cert-card').forEach((c,i)=>{
   c.style.transition=`opacity .5s ${i*.07}s, transform .5s ${i*.07}s`;
   setTimeout(()=>{ c.style.opacity='1'; c.style.transform='none'; }, 400+i*70);
 });
+</script>
 
-// ══ MATRIX RAIN ══
-(function(){
-  const canvas=document.getElementById('matrix-canvas');
-  const ctx=canvas.getContext('2d');
-  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
-  resize(); window.addEventListener('resize',resize);
-  const chars='アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
-  const fontSize=14;
-  let columns=Math.floor(canvas.width/fontSize);
-  let drops=Array(columns).fill(1);
-  function draw(){
-    ctx.fillStyle='rgba(0,0,0,0.05)';
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle='#00ff88';
-    ctx.font=fontSize+'px monospace';
-    for(let i=0;i<drops.length;i++){
-      const text=chars[Math.floor(Math.random()*chars.length)];
-      ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-      if(drops[i]*fontSize>canvas.height&&Math.random()>0.975) drops[i]=0;
-      drops[i]++;
-    }
-  }
-  setInterval(draw,45);
-  window.addEventListener('resize',()=>{columns=Math.floor(canvas.width/fontSize);drops=Array(columns).fill(1);});
-})();
+<script>
+// ══════════════════════════════════════════
+//  SECURITY MODULE — Rahul Portfolio v3.0
+// ══════════════════════════════════════════
 
-// ══ GAME MODAL ══
-let activeGame=null;
-function openGame(t){
-  const m=document.getElementById('game-modal');
-  document.getElementById('gm-title').textContent=t;
-  document.getElementById('game-board').style.display='none';
-  document.getElementById('game-board').innerHTML='';
-  document.getElementById('game-canvas').style.display='none';
-  document.getElementById('game-info').textContent='';
-  m.classList.add('open');
-}
-function closeGame(e){
-  if(e&&e.target.id!=='game-modal'&&!e.target.classList.contains('gm-close'))return;
-  document.getElementById('game-modal').classList.remove('open');
-  if(activeGame&&activeGame.cleanup)activeGame.cleanup();
-  activeGame=null;
-}
+// 1. DISABLE RIGHT CLICK
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  showSecurityToast('Right-click disabled');
+  return false;
+});
 
-// ═══ SNAKE ═══
-function launchSnake(){
-  openGame('SNAKE GAME');
-  const c=document.getElementById('game-canvas');
-  c.style.display='block';c.width=400;c.height=400;
-  const ctx=c.getContext('2d'),G=20,cols=c.width/G,rows=c.height/G;
-  let sn,dir,nd,food,sc,over,iv;
-  function reset(){
-    sn=[{x:10,y:10}];dir={x:1,y:0};nd={x:1,y:0};food=sf();sc=0;over=false;
-    if(iv)clearInterval(iv);
-    iv=setInterval(tick,120);draw();
-  }
-  function sf(){return{x:Math.floor(Math.random()*cols),y:Math.floor(Math.random()*rows)};}
-  function onK(e){
-    if(e.key==='ArrowUp'&&dir.y!==1){nd={x:0,y:-1};e.preventDefault();}
-    if(e.key==='ArrowDown'&&dir.y!==-1){nd={x:0,y:1};e.preventDefault();}
-    if(e.key==='ArrowLeft'&&dir.x!==1){nd={x:-1,y:0};e.preventDefault();}
-    if(e.key==='ArrowRight'&&dir.x!==-1){nd={x:1,y:0};e.preventDefault();}
-    if((e.key==='r'||e.key==='R')&&over){reset();}
-  }
-  document.addEventListener('keydown',onK);
-  document.getElementById('game-info').textContent='Arrow keys to move | R to restart | Eat the red food!';
-  function tick(){
-    if(over)return;
-    dir=nd;
-    const h={x:sn[0].x+dir.x,y:sn[0].y+dir.y};
-    if(h.x<0||h.x>=cols||h.y<0||h.y>=rows){over=true;draw();return;}
-    for(const s of sn)if(s.x===h.x&&s.y===h.y){over=true;draw();return;}
-    sn.unshift(h);
-    if(h.x===food.x&&h.y===food.y){sc++;food=sf();}else{sn.pop();}
-    draw();
-  }
-  function draw(){
-    ctx.fillStyle='#0a0a0e';ctx.fillRect(0,0,c.width,c.height);
-    ctx.strokeStyle='rgba(0,255,136,0.04)';
-    for(let i=0;i<cols;i++){ctx.beginPath();ctx.moveTo(i*G,0);ctx.lineTo(i*G,c.height);ctx.stroke();}
-    for(let i=0;i<rows;i++){ctx.beginPath();ctx.moveTo(0,i*G);ctx.lineTo(c.width,i*G);ctx.stroke();}
-    ctx.shadowBlur=10;ctx.shadowColor='#ff2244';ctx.fillStyle='#ff2244';
-    ctx.fillRect(food.x*G+2,food.y*G+2,G-4,G-4);ctx.shadowBlur=0;
-    sn.forEach((s,i)=>{
-      ctx.fillStyle=i===0?'#00ff88':'rgba(0,255,136,0.6)';
-      ctx.shadowBlur=i===0?8:0;ctx.shadowColor='#00ff88';
-      ctx.fillRect(s.x*G+1,s.y*G+1,G-2,G-2);
-    });ctx.shadowBlur=0;
-    ctx.fillStyle='#00ff88';ctx.font='14px "Share Tech Mono"';ctx.fillText('SCORE: '+sc,10,18);
-    if(over){
-      ctx.fillStyle='rgba(0,0,0,0.75)';ctx.fillRect(0,0,c.width,c.height);
-      ctx.textAlign='center';ctx.fillStyle='#ff2244';ctx.font='28px "Bebas Neue"';
-      ctx.fillText('GAME OVER',c.width/2,c.height/2-15);
-      ctx.fillStyle='#00ff88';ctx.font='16px "Share Tech Mono"';
-      ctx.fillText('Score: '+sc,c.width/2,c.height/2+15);
-      ctx.fillText('Press R to restart',c.width/2,c.height/2+45);
-      ctx.textAlign='start';clearInterval(iv);
-    }
-  }
-  reset();
-  activeGame={cleanup:()=>{clearInterval(iv);document.removeEventListener('keydown',onK);}};
-}
+// 2. DISABLE F12, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+S, Ctrl+A
+document.addEventListener('keydown', function(e) {
+  // F12
+  if (e.key === 'F12') { e.preventDefault(); showSecurityToast('DevTools disabled'); return false; }
+  // Ctrl+U (view source)
+  if (e.ctrlKey && e.key === 'u') { e.preventDefault(); showSecurityToast('Source view disabled'); return false; }
+  // Ctrl+Shift+I (inspect)
+  if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); showSecurityToast('Inspect disabled'); return false; }
+  // Ctrl+Shift+J (console)
+  if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) { e.preventDefault(); return false; }
+  // Ctrl+Shift+C
+  if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) { e.preventDefault(); return false; }
+  // Ctrl+S (save page)
+  if (e.ctrlKey && e.key === 's') { e.preventDefault(); showSecurityToast('Save disabled'); return false; }
+  // Ctrl+A (select all)
+  if (e.ctrlKey && e.key === 'a') { e.preventDefault(); return false; }
+  // Ctrl+P (print)
+  if (e.ctrlKey && e.key === 'p') { e.preventDefault(); showSecurityToast('Print disabled'); return false; }
+});
 
-// ═══ TIC-TAC-TOE ═══
-function launchTTT(){
-  openGame('TIC-TAC-TOE');
-  const bd=document.getElementById('game-board');
-  bd.style.display='block';
-  const info=document.getElementById('game-info');
-  info.textContent='You are X | Click a cell to play!';
-  let board=Array(9).fill(null),done=false;
-  const grid=document.createElement('div');grid.className='ttt-grid';
-  for(let i=0;i<9;i++){
-    const cell=document.createElement('div');cell.className='ttt-cell';
-    cell.dataset.i=i;
-    cell.addEventListener('click',()=>play(i));
-    grid.appendChild(cell);
-  }
-  bd.appendChild(grid);
-  function render(){
-    grid.querySelectorAll('.ttt-cell').forEach((c,i)=>{
-      c.textContent=board[i]||'';
-      c.className='ttt-cell'+(board[i]==='X'?' x':'')+(board[i]==='O'?' o':'');
-    });
-  }
-  function check(b){
-    const w=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-    for(const[a,bb,cc]of w)if(b[a]&&b[a]===b[bb]&&b[a]===b[cc])return b[a];
-    return b.every(v=>v)?'D':null;
-  }
-  function cpuMove(){
-    for(let i=0;i<9;i++){if(!board[i]){board[i]='O';if(check(board)==='O')return;board[i]=null;}}
-    for(let i=0;i<9;i++){if(!board[i]){board[i]='X';if(check(board)==='X'){board[i]='O';return;}board[i]=null;}}
-    if(!board[4]){board[4]='O';return;}
-    const empty=board.map((v,i)=>v?-1:i).filter(i=>i>=0);
-    board[empty[Math.floor(Math.random()*empty.length)]]='O';
-  }
-  function play(i){
-    if(done||board[i])return;
-    board[i]='X';render();
-    let r=check(board);
-    if(r){endGame(r);return;}
-    cpuMove();render();
-    r=check(board);
-    if(r)endGame(r);
-  }
-  function endGame(r){
-    done=true;
-    if(r==='X')info.textContent='YOU WIN!';
-    else if(r==='O')info.textContent='CPU wins. Try again!';
-    else info.textContent='DRAW!';
-  }
-  render();
-  activeGame={cleanup:()=>{}};
-}
+// 3. DISABLE DRAG on images
+document.addEventListener('dragstart', function(e) {
+  e.preventDefault(); return false;
+});
 
-// ═══ MEMORY GAME ═══
-function launchMemory(){
-  openGame('MEMORY MATCH');
-  const bd=document.getElementById('game-board');
-  bd.style.display='block';
-  const info=document.getElementById('game-info');
-  const icons=['◈','△','◎','▢','✦','⬡','◆','▽'];
-  let cards=[...icons,...icons];
-  for(let i=cards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[cards[i],cards[j]]=[cards[j],cards[i]];}
-  let flipped=[],matched=[],moves=0,lock=false;
-  const grid=document.createElement('div');grid.className='mem-grid';
-  cards.forEach((ic,i)=>{
-    const card=document.createElement('div');card.className='mem-card';
-    card.dataset.i=i;card.dataset.icon=ic;
-    card.textContent=ic;
-    card.addEventListener('click',()=>flipCard(i,card));
-    grid.appendChild(card);
-  });
-  bd.appendChild(grid);
-  info.textContent='Find all 8 matching pairs! Moves: 0';
-  function flipCard(i,el){
-    if(lock||flipped.length>=2||flipped.find(f=>f.i===i)||matched.includes(i))return;
-    el.classList.add('flipped');
-    flipped.push({i,el,icon:cards[i]});
-    if(flipped.length===2){
-      moves++;
-      info.textContent='Find all 8 matching pairs! Moves: '+moves;
-      if(flipped[0].icon===flipped[1].icon){
-        flipped[0].el.classList.add('matched');flipped[1].el.classList.add('matched');
-        matched.push(flipped[0].i,flipped[1].i);
-        flipped=[];
-        if(matched.length===cards.length)info.textContent='ALL MATCHED in '+moves+' moves!';
-      }else{
-        lock=true;
-        setTimeout(()=>{flipped[0].el.classList.remove('flipped');flipped[1].el.classList.remove('flipped');flipped=[];lock=false;},800);
+// 4. DISABLE IMAGE SAVE (long press on mobile + drag)
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('contextmenu', e => e.preventDefault());
+  img.addEventListener('dragstart', e => e.preventDefault());
+  img.draggable = false;
+  img.setAttribute('oncontextmenu', 'return false;');
+});
+
+// 5. CERTIFICATE SCREENSHOT PROTECTION
+// — When cert modal opens, start protection
+const origOpenCert = window.openCert;
+window.openCert = function(key) {
+  origOpenCert(key);
+  activateCertProtection();
+};
+
+function activateCertProtection() {
+  // Add watermark overlay
+  const wrap = document.querySelector('.cm-img-wrap');
+  if (!wrap.querySelector('.cert-watermark')) {
+    const wm = document.createElement('div');
+    wm.className = 'cert-watermark';
+    const rows = 8;
+    for (let i = 0; i < rows; i++) {
+      const row = document.createElement('div');
+      row.className = 'cert-watermark-row';
+      for (let j = 0; j < 4; j++) {
+        const s = document.createElement('span');
+        s.textContent = 'RAHUL PRAJAPATI • PORTFOLIO';
+        row.appendChild(s);
       }
+      wm.appendChild(row);
     }
+    wrap.appendChild(wm);
   }
-  activeGame={cleanup:()=>{}};
+
+  // Timestamp overlay — unique per view
+  const ts = document.querySelector('.cm-ver');
+  if (ts) {
+    const now = new Date();
+    ts.textContent = `✓ GRADE A — ${now.toLocaleString('en-IN', {hour:'2-digit',minute:'2-digit',second:'2-digit'})}`;
+  }
+
+  // PrintScreen key block when modal open
+  document.addEventListener('keyup', blockPrintScreen);
+  document.addEventListener('keydown', blockPrintScreen);
 }
+
+function blockPrintScreen(e) {
+  if (e.key === 'PrintScreen' || e.key === 'Print') {
+    e.preventDefault();
+    // Briefly flash the cert image to white (ruins screenshot timing)
+    const img = document.getElementById('cm-img');
+    if (img) {
+      img.style.filter = 'brightness(10)';
+      setTimeout(() => { img.style.filter = 'contrast(1.04) saturate(.92)'; }, 120);
+    }
+    showSecurityToast('Screenshot blocked');
+    navigator.clipboard && navigator.clipboard.writeText('').catch(()=>{});
+    return false;
+  }
+}
+
+// Remove printscreen listener when modal closes
+const origCloseCert = window.closeCert;
+window.closeCert = function(e) {
+  origCloseCert(e);
+  document.removeEventListener('keyup', blockPrintScreen);
+  document.removeEventListener('keydown', blockPrintScreen);
+};
+
+
+
+// 7. SECURITY TOAST notification
+function showSecurityToast(msg) {
+  let toast = document.getElementById('sec-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'sec-toast';
+    toast.style.cssText = `
+      position:fixed;bottom:32px;right:32px;z-index:99998;
+      background:#0d0d12;border:1px solid rgba(255,34,68,.5);
+      color:#ff2244;font-family:'Share Tech Mono',monospace;
+      font-size:.68rem;letter-spacing:3px;padding:10px 18px;
+      text-transform:uppercase;opacity:0;transition:opacity .3s;
+      box-shadow:0 0 20px rgba(255,34,68,.15);
+    `;
+    document.body.appendChild(toast);
+  }
+  toast.textContent = '🔒 ' + msg;
+  toast.style.opacity = '1';
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+}
+
+// 8. DISABLE PRINT via CSS (media query + JS)
+window.addEventListener('beforeprint', function(e) {
+  e.preventDefault();
+  showSecurityToast('Printing disabled');
+  return false;
+});
+
+// 9. MOBILE: disable long-press text selection & callout
+document.addEventListener('touchstart', function(e) {
+  if (e.touches.length > 1) e.preventDefault();
+}, { passive: false });
+
+console.clear();
+console.log('%c⛔ ACCESS DENIED', 'color:#ff2244;font-size:2rem;font-weight:bold;');
+console.log('%cThis portfolio is protected.', 'color:#666;font-size:1rem;');
+
 </script>
 
 </body>
