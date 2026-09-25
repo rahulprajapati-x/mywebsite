@@ -499,11 +499,27 @@
     }
 
     /* ── PROJECTS ── */
+    .proj-filter {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .pf-btn {
+      padding: 6px 16px; border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; letter-spacing: 0.5px;
+    }
+    .pf-btn:hover, .pf-btn.active {
+      border-color: var(--green); color: var(--green);
+      background: var(--green-05); box-shadow: 0 0 10px hsl(120,100%,50%,0.12);
+    }
     .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .proj-card {
-      padding: 26px; background: var(--bg-card);
+      padding: 24px; background: var(--bg-card);
       border: 1px solid var(--border); border-radius: var(--radius);
       transition: all 0.25s; position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
     }
     .proj-card::after {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
@@ -512,17 +528,54 @@
     }
     .proj-card:hover::after { transform: scaleY(1); }
     .proj-card:hover { border-color: var(--border-bright); background: var(--green-05); transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .proj-card.hidden { display: none; }
+    .proj-card-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .proj-lang-badge {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; color: var(--text-dim);
+    }
+    .lang-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
     .proj-status {
       display: inline-block; padding: 3px 9px; border-radius: 3px;
       font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px;
-      margin-bottom: 14px;
     }
     .status-done { background: var(--green-10); border: 1px solid hsl(120,100%,50%,0.25); color: var(--green); }
     .status-plan { background: hsl(270,100%,65%,0.1); border: 1px solid hsl(270,100%,65%,0.25); color: hsl(270,100%,70%); }
     .status-wip { background: hsl(40,100%,50%,0.1); border: 1px solid hsl(40,100%,50%,0.25); color: var(--amber); }
     .proj-title { font-size: 1.05rem; font-weight: 700; color: var(--text-white); margin-bottom: 8px; }
-    .proj-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
-    .proj-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+    .proj-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; flex: 1; }
+    .proj-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .proj-actions {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: auto;
+    }
+    .proj-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 12px; border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg-card2); color: var(--text-dim);
+      font-size: 0.72rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .proj-link:hover { border-color: var(--green); color: var(--green); background: var(--green-05); }
+    .proj-link-demo {
+      border-color: hsl(120,100%,50%,0.3); color: var(--green);
+      background: var(--green-05);
+    }
+    .proj-link-demo:hover { box-shadow: 0 0 10px hsl(120,100%,50%,0.2); }
+    .proj-stars {
+      margin-left: auto;
+      display: flex; align-items: center; gap: 3px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; color: var(--text-dim);
+    }
+    .proj-cta {
+      text-align: center; margin-top: 36px;
+    }
 
     /* ── TERMINAL ── */
     .term-wrapper {
@@ -929,15 +982,218 @@
   <div class="container">
     <div class="sec-head reveal">
       <div class="sec-label">Projects</div>
-      <h2 class="sec-title">Built &amp; <span>Deployed</span></h2>
-      <p class="sec-desc">Security tools and research projects built from scratch.</p>
+      <h2 class="sec-title">GitHub <span>Repositories</span></h2>
+      <p class="sec-desc">Real security tools and research projects — open source on <a href="https://github.com/rahulprajapati-x" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;">@rahulprajapati-x</a>.</p>
     </div>
-    <div class="proj-grid">
-      <div class="proj-card reveal"><div class="proj-status status-done">● COMPLETE</div><div class="proj-title">Steganography Tool</div><div class="proj-desc">Python LSB steganography — hide and extract secret messages inside images. Supports password protection and both encode/decode flows.</div><div class="proj-chips"><span class="chip">Python</span><span class="chip">PIL</span><span class="chip">LSB</span><span class="chip">Forensics</span></div></div>
-      <div class="proj-card reveal d1"><div class="proj-status status-done">● COMPLETE</div><div class="proj-title">Network Monitor Dashboard</div><div class="proj-desc">Real-time network monitoring using Python + Scapy. Tracks connections, bandwidth, and flags suspicious activity with alerts.</div><div class="proj-chips"><span class="chip">Python</span><span class="chip">Scapy</span><span class="chip">Real-time</span><span class="chip">Monitoring</span></div></div>
-      <div class="proj-card reveal d2"><div class="proj-status status-plan">◐ PLANNING</div><div class="proj-title">AI Threat Hunter</div><div class="proj-desc">Using ML to detect anomalous patterns in network traffic and system logs. Planned integration with SIEM workflows and threat intel feeds.</div><div class="proj-chips"><span class="chip">Python</span><span class="chip">ML/AI</span><span class="chip">SIEM</span><span class="chip">Threat Intel</span></div></div>
-      <div class="proj-card reveal d3"><div class="proj-status status-wip">◑ ONGOING</div><div class="proj-title">CTF Writeups Portfolio</div><div class="proj-desc">Documenting CTF solutions from HackTheBox, TryHackMe, and PicoCTF. Covers web, forensics, crypto, OSINT, and binary exploitation.</div><div class="proj-chips"><span class="chip">CTF</span><span class="chip">Web</span><span class="chip">Forensics</span><span class="chip">Crypto</span></div></div>
+
+    <!-- Filter Tabs -->
+    <div class="proj-filter reveal" id="proj-filter">
+      <button class="pf-btn active" data-filter="all">All</button>
+      <button class="pf-btn" data-filter="Python">Python</button>
+      <button class="pf-btn" data-filter="JavaScript">JavaScript</button>
+      <button class="pf-btn" data-filter="HTML">HTML</button>
     </div>
+
+    <div class="proj-grid" id="proj-grid">
+
+      <!-- 1: virtual-malwar-anlysis -->
+      <div class="proj-card reveal" data-lang="JavaScript">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● COMPLETE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#f1e05a"></span>JavaScript
+          </div>
+        </div>
+        <div class="proj-title">Virtual Malware Analysis</div>
+        <div class="proj-desc">🛡️ AI-Powered Malware Analysis & Virtual Sandbox Platform — Static/dynamic behavioral analysis, YARA scanning, MITRE ATT&amp;CK mapping, PCAP network forensics, and CIPHER AI assistant.</div>
+        <div class="proj-chips">
+          <span class="chip">JavaScript</span><span class="chip">YARA</span><span class="chip">MITRE ATT&amp;CK</span><span class="chip">Sandbox</span><span class="chip">AI</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/virtual-malwar-anlysis" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <div class="proj-stars"><span>⭐</span> 0</div>
+        </div>
+      </div>
+
+      <!-- 2: vulnscanner -->
+      <div class="proj-card reveal d1" data-lang="Python">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● COMPLETE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#3572A5"></span>Python
+          </div>
+        </div>
+        <div class="proj-title">VulnScanner</div>
+        <div class="proj-desc">AI-powered vulnerability scanner with automated security scanning, vulnerability detection, reporting, dashboard, and AI-assisted analysis.</div>
+        <div class="proj-chips">
+          <span class="chip">Python</span><span class="chip">AI</span><span class="chip">Security</span><span class="chip">Dashboard</span><span class="chip">Automation</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/vulnscanner" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <div class="proj-stars"><span>⭐</span> 0</div>
+        </div>
+      </div>
+
+      <!-- 3: netwatch -->
+      <div class="proj-card reveal d2" data-lang="HTML">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● COMPLETE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#e34c26"></span>HTML
+          </div>
+        </div>
+        <div class="proj-title">NetWatch</div>
+        <div class="proj-desc">Real-time network monitoring dashboard. Tracks connections, bandwidth usage, and flags suspicious network activity with visual alerts.</div>
+        <div class="proj-chips">
+          <span class="chip">HTML</span><span class="chip">JavaScript</span><span class="chip">Network</span><span class="chip">Real-time</span><span class="chip">Monitoring</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/netwatch" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <div class="proj-stars"><span>⭐</span> 0</div>
+        </div>
+      </div>
+
+      <!-- 4: steganography-tool -->
+      <div class="proj-card reveal d3" data-lang="Python">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● COMPLETE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#3572A5"></span>Python
+          </div>
+        </div>
+        <div class="proj-title">Steganography Tool</div>
+        <div class="proj-desc">Python LSB steganography tool — hide and extract secret messages inside images. Supports password protection and both encode/decode workflows.</div>
+        <div class="proj-chips">
+          <span class="chip">Python</span><span class="chip">PIL</span><span class="chip">LSB</span><span class="chip">Forensics</span><span class="chip">Cryptography</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/steganography-tool" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <div class="proj-stars"><span>⭐</span> 1</div>
+        </div>
+      </div>
+
+      <!-- 5: location-tracking -->
+      <div class="proj-card reveal d1" data-lang="HTML">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● LIVE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#e34c26"></span>HTML
+          </div>
+        </div>
+        <div class="proj-title">Location Tracking</div>
+        <div class="proj-desc">A lightweight location-tracking tool built using SPIN to collect and visualize real-time location data for authorized testing and educational purposes.</div>
+        <div class="proj-chips">
+          <span class="chip">HTML</span><span class="chip">SPIN</span><span class="chip">Geolocation</span><span class="chip">OSINT</span><span class="chip">Real-time</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/location-tracking" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <a href="https://location-tracking-six-blue.vercel.app" target="_blank" rel="noopener" class="proj-link proj-link-demo">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <div class="proj-stars"><span>⭐</span> 1</div>
+        </div>
+      </div>
+
+      <!-- 6: stegx -->
+      <div class="proj-card reveal d2" data-lang="HTML">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● LIVE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#e34c26"></span>HTML
+          </div>
+        </div>
+        <div class="proj-title">StegX</div>
+        <div class="proj-desc">Web-based steganography tool — hide and reveal hidden messages inside images directly in the browser. No server required, pure client-side processing.</div>
+        <div class="proj-chips">
+          <span class="chip">HTML</span><span class="chip">Canvas API</span><span class="chip">Steganography</span><span class="chip">Forensics</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/stegx" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <div class="proj-stars"><span>⭐</span> 1</div>
+        </div>
+      </div>
+
+      <!-- 7: cam-loc -->
+      <div class="proj-card reveal d3" data-lang="HTML">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● LIVE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#e34c26"></span>HTML
+          </div>
+        </div>
+        <div class="proj-title">Cam-Loc</div>
+        <div class="proj-desc">Camera-based location tracking tool — captures device location using browser camera APIs. Built for authorized OSINT research and educational purposes.</div>
+        <div class="proj-chips">
+          <span class="chip">HTML</span><span class="chip">Camera API</span><span class="chip">Geolocation</span><span class="chip">OSINT</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/cam-loc" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <a href="https://cam-location-7y31.vercel.app" target="_blank" rel="noopener" class="proj-link proj-link-demo">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <div class="proj-stars"><span>⭐</span> 0</div>
+        </div>
+      </div>
+
+      <!-- 8: mywebsite / portfolio -->
+      <div class="proj-card reveal d1" data-lang="HTML">
+        <div class="proj-card-top">
+          <div class="proj-status status-done">● LIVE</div>
+          <div class="proj-lang-badge">
+            <span class="lang-dot" style="background:#e34c26"></span>HTML
+          </div>
+        </div>
+        <div class="proj-title">Portfolio Website</div>
+        <div class="proj-desc">This cybersecurity portfolio — a hacker-themed, terminal-styled static site with matrix rain, interactive terminal, cert viewer, and dark glassmorphism design.</div>
+        <div class="proj-chips">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Portfolio</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/rahulprajapati-x/mywebsite" target="_blank" rel="noopener" class="proj-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Source
+          </a>
+          <a href="https://rahulprajapati-x.vercel.app" target="_blank" rel="noopener" class="proj-link proj-link-demo">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <div class="proj-stars"><span>⭐</span> 1</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GitHub CTA -->
+    <div class="proj-cta reveal">
+      <a href="https://github.com/rahulprajapati-x" target="_blank" rel="noopener" class="btn btn-outline" style="margin:0 auto;display:inline-flex;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        View All Repositories on GitHub
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -1280,13 +1536,25 @@ const CMDS={
     {v:'  [06] CCNA  · Routing & Switching           May-Jul 2023'},
   ],
   projects:()=>[
-    {v:'━━━ PROJECTS ━━━━━━━━━━━━━━━━━━━━━━━━━',c:'g'},
-    {v:'  [01] Steganography Tool     [COMPLETE]',c:'g'},
-    {v:'       Python · PIL · LSB Method · Forensics'},
-    {v:'  [02] Network Monitor        [COMPLETE]',c:'g'},
-    {v:'       Python · Scapy · Real-time tracking'},
-    {v:'  [03] AI Threat Hunter       [PLANNING]',c:'a'},
-    {v:'       Python · ML/AI · SIEM integration'},
+    {v:'━━━ GITHUB PROJECTS ━━━━━━━━━━━━━━━━━━',c:'g'},
+    {v:'  github.com/rahulprajapati-x',c:'g'},
+    {v:''},
+    {v:'  [01] virtual-malwar-anlysis  [COMPLETE]',c:'g'},
+    {v:'       JS · YARA · MITRE ATT&CK · Sandbox · AI'},
+    {v:'  [02] vulnscanner             [COMPLETE]',c:'g'},
+    {v:'       Python · AI · Security · Automation'},
+    {v:'  [03] netwatch                [COMPLETE]',c:'g'},
+    {v:'       HTML · JS · Network Monitor · Real-time'},
+    {v:'  [04] steganography-tool      [COMPLETE] ⭐1',c:'g'},
+    {v:'       Python · PIL · LSB · Forensics'},
+    {v:'  [05] location-tracking       [LIVE] ⭐1',c:'g'},
+    {v:'       HTML · SPIN · Geolocation · OSINT'},
+    {v:'  [06] stegx                   [LIVE] ⭐1',c:'g'},
+    {v:'       HTML · Canvas API · Steganography'},
+    {v:'  [07] cam-loc                 [LIVE]',c:'g'},
+    {v:'       HTML · Camera API · Geolocation · OSINT'},
+    {v:'  [08] mywebsite               [LIVE] ⭐1',c:'g'},
+    {v:'       HTML · CSS · JS · Portfolio'},
   ],
   tools:()=>[
     {v:'━━━ SECURITY TOOLS ━━━━━━━━━━━━━━━━━━━',c:'g'},
@@ -1356,6 +1624,24 @@ if(termIn){
     }, 850);
   });
 }
+
+// ── PROJECT FILTER TABS ──
+const pfBtns = document.querySelectorAll('.pf-btn');
+const projCards = document.querySelectorAll('#proj-grid .proj-card');
+pfBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    pfBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    projCards.forEach(card => {
+      if (f === 'all' || card.dataset.lang === f) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
 
 </script>
 </body>
